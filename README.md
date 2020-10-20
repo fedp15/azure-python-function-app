@@ -25,6 +25,7 @@ $ pip freeze > requirements.txt
 $ func start --functions <my-function> --python --verbose --build remote
 ```
 6. [Deploy to Azure using Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-05)
+7. Store your code on [rodekruis' github](https://github.com/rodekruis): create a new repo named <my-function-app>-function-app and put your code there
 
 You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: in Azure portal you can also check the logs within the Function App (`Functions > <my-function> > Code + Test > Logs`)
 

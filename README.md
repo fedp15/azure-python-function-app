@@ -12,8 +12,8 @@ In Azure:
 
 ## Steps
 1. [create a python function with Visual Data Studio](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-02)
-2. Copy-paste your script into `__init__.py`
-3. Copy-paste the requirements of your python script into `requirements.txt`. RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
+2. Copy-paste your script into `__init__.py`, see [this template](https://github.com/jmargutt/azure-python-function-app/blob/main/my-function/__init__.py)
+3. Copy-paste the modules required to run your python script into `requirements.txt`. RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
 ```sh 
 $ pip freeze > requirements.txt
 ```
@@ -31,7 +31,8 @@ If your function takes data as input/output, the recommended workflow is to stor
 
 When you create a new function with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Good to know: individual files in Azure storage are called 'blobs' and directories 'containers'.
 1. Create a container within the storage via the Azure portal
-2. Upload your data in the container
+2. Configure the function
+
 They way your function exchange data with the storage is via [azure-storage-blob](https://pypi.org/project/azure-storage-blob/), which needs the rights credentials. If you are using the default storage that is created with the function, the credentials are already stored in an environmental variable named `AzureWebJobsStorage`; you can get it with
 ```
 credentials = os.environ['AzureWebJobsStorage']

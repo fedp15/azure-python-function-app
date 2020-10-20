@@ -1,5 +1,6 @@
 # azure-python-function-app
 template and documentation to build an Azure function app in python.
+It assumes that the function will be triggered at regular intervals; if an HTTP trigger is required see [the Azure documentation](https://docs.microsoft.com/en-us/azure/azure-functions/functions-reference-python#http-trigger-and-bindings).
 
 ## Requirements
 Locally:

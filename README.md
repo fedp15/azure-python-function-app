@@ -1,5 +1,5 @@
 # azure-python-function-app
-template and documentation to build an Azure function app in python
+template and documentation to build an Azure function app in python.
 
 ## Requirements
 Locally:
@@ -12,12 +12,11 @@ In Azure:
 
 ## Steps
 1. [create a python function with Visual Data Studio](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-02)
-2. Copy-paste the requirements of your python script into `requirements.txt`
+2. Copy-paste your script into `__init__.py`
+3. Copy-paste the requirements of your python script into `requirements.txt`. RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
 ```sh 
 $ pip freeze > requirements.txt
 ```
-RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project and test locally.
-3. Copy-paste your script into `__init__.py`
 4. Configure how often your function will run in `function.json`: edit the [cron expression](https://crontab.guru/) in the field `schedule`
 5. Debug locally using Visual Studio Code, e.g. via the terminal execute this command from the root folder
 ```sh 
@@ -25,9 +24,11 @@ $ func start --functions <my-function> --python --verbose --build remote
 ```
 6. [Deploy to Azure using Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-05)
 
+You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: you can also check the logs in the Function App under `Functions > <my-function> > Code + Test > Logs`
+
 ## Data
 If your function needs to use data, this data needs to be in an Azure storage. When you create a new function with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Individual files in Azure storage are called 'blobs' and directories 'containers'
-1. Create a container within the storage via the [Azure portal](https://portal.azure.com/)
+1. Create a container within the storage via the Azure portal
 2. Upload your data in the container
 They way your function exchange data with the storage is via [azure-storage-blob](https://pypi.org/project/azure-storage-blob/), which needs the rights credentials. If you are using the default storage that is created with the function, the credentials are already stored as environmental variable named `AzureWebJobsStorage`; you can get it with
 ```
@@ -47,5 +48,3 @@ If your function needs to use an API and requires credentials for that, do NOT s
 2. Ask to be given the role of "Key Vault Secrets Officer" in the vault (ask the admin of the resource group)
 3. Add your credentials under `Secrets` in the vault via the Azure portal
 4. [Integrate the credentials in your function app](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/)
-
-

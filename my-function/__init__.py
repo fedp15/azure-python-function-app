@@ -18,7 +18,7 @@ def function():
     # load some data from a blob storage
     logging.info('connect to storage %s', connection_to_storage)
     blob_service_client = BlobServiceClient.from_connection_string(connection_to_storage)
-    blob_client = blob_service_client.get_blob_client(container='models', blob='gsdmm_model.pickle')
+    blob_client = blob_service_client.get_blob_client(container='<my-container>', blob='<my-blob>')
 
 
 def main(mytimer: func.TimerRequest) -> None:

@@ -20,7 +20,7 @@ In Azure:
 $ pip freeze > requirements.txt
 ```
 4. Configure how often your function will run in `function.json`: edit the [cron expression](https://crontab.guru/) in the field `schedule`
-5. Debug locally using Visual Studio Code, e.g. via the terminal execute this command from the project root folder
+5. Debug locally using Visual Studio Code. E.g. to run the function locally, execute this command from the project root folder
 ```sh 
 $ func start --functions <my-function> --python --verbose --build remote
 ```
@@ -45,7 +45,9 @@ blob_service_client = BlobServiceClient.from_connection_string(credentials)
 blob_client = blob_service_client.get_blob_client(container='<my-container>', blob='<my-data-file>')
 data = pickle.loads(blob_client.download_blob().readall())
 ```
-3. [OPTIONAL] If you are using a different storage, [copy the credentials from the Azure portal](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#copy-your-credentials-from-the-azure-portal) and [add it in the function settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings) (so that they will be callable within the function as environmental variables)
+[OPTIONAL] If you are using a different storage account
+1. [Copy the credentials from the Azure portal](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#copy-your-credentials-from-the-azure-portal) 2. [Add them in the function settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings), so that they will be callable within the function as environmental variables
+3. Add them in `local.settings.json`, in order to be able to run the function locally
 
 ## Credentials, keys and secrets
 If your function needs to use an API (e.g. Google Maps) and requires credentials, **do NOT store them in `__init__.py`**, since this will expose them to whoever has access to the resource group. The recommended workflow is to store them in an [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview).

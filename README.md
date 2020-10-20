@@ -11,7 +11,7 @@ In Azure:
 2. The role of "Contributor" in that resource group (ask Maarten)
 
 ## Steps
-1. [create a python function with Visual Data Studio](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-02)
+1. [create an empty python function app with Visual Data Studio](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-02)
 2. Copy-paste your script into `__init__.py`, see [this template](https://github.com/jmargutt/azure-python-function-app/blob/main/my-function/__init__.py)
 3. Copy-paste the modules required to run your python script into `requirements.txt`. RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
 ```sh 

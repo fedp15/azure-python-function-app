@@ -47,7 +47,8 @@ blob_client = blob_service_client.get_blob_client(container='<my-container>', bl
 data = pickle.loads(blob_client.download_blob().readall())
 ```
 [OPTIONAL] If you are using a different storage account
-1. [Copy the credentials from the Azure portal](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#copy-your-credentials-from-the-azure-portal) 2. [Add them in the function settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings), so that they will be callable within the function as environmental variables
+1. [Copy the credentials from the Azure portal](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#copy-your-credentials-from-the-azure-portal)
+2. [Add them in the function settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings), so that they will be callable within the function as environmental variables
 3. Add them in `local.settings.json`, in order to be able to run the function locally
 
 ## Credentials, keys and secrets

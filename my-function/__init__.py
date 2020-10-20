@@ -11,9 +11,9 @@ def function():
     :return:
     """
 
-    # load app configs (edit them in azure portal)
+    # load app settings (edit them in azure portal)
     connection_to_storage = os.environ['AzureWebJobsStorage']
-    my_config = os.environ["my-config"]
+    my_setting = os.environ["my-setting"]
 
     # load some data from a blob storage
     logging.info('connect to storage %s', connection_to_storage)

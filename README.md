@@ -20,7 +20,7 @@ In Azure:
 $ pip freeze > requirements.txt
 ```
 4. Configure how often your function will run in `function.json`: edit the [cron expression](https://crontab.guru/) in the field `schedule`
-5. Debug locally using Visual Studio Code. E.g. to run the function locally, execute this command from the project root folder
+5. Debug locally. Example: to run the function locally, execute this command from the project root folder
 ```sh 
 $ func start --functions <my-function> --python --verbose --build remote
 ```

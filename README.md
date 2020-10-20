@@ -46,5 +46,5 @@ data = pickle.loads(blob_client.download_blob().readall())
 If your function needs to use an API (e.g. Google Maps) and requires credentials, **do NOT store them in `__init__.py`**, since this will expose them to whoever has access to the resource group. The recommended workflow is to store them in an Azure key vault.
 1. Create an Azure Key Vault in the same resource group
 2. Ask to be given the role of "Key Vault Secrets Officer" in the vault (ask the admin of the resource group)
-3. Add your credentials under `Secrets`, via the Azure portal
+3. Add your credentials in the vault under `Secrets`, via the Azure portal
 4. [Integrate the credentials in your function app](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/)

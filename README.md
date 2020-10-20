@@ -9,7 +9,7 @@ Locally:
 2. [Azure Functions Core Tools and Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01#configure-your-environment)
 
 In Azure:
-1. A resource group for linux resources (BEST PRACTISE: make a new resource group for each project)
+1. An [Azure Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) for linux resources (BEST PRACTISE: make a new resource group for each project)
 2. The role of "Contributor" in that resource group (ask Maarten)
 
 ## Steps
@@ -29,9 +29,9 @@ $ func start --functions <my-function> --python --verbose --build remote
 You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: in Azure portal you can also check the logs within the Function App (`Functions > <my-function> > Code + Test > Logs`)
 
 ## Data
-If your function takes data as input/output, the recommended workflow is to store the data in an Azure storage and download/upload it from/to there.
+If your function takes data as input/output, the recommended workflow is to store the data in an [Azure storage account](https://docs.microsoft.com/en-us/azure/storage/common/storage-account-overview) and download/upload it from/to there.
 
-When you create a new function with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Good to know: individual files in Azure storage are called 'blobs' and directories 'containers'.
+When you create a new function app with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Good to know: individual files in Azure storage are called 'blobs' and directories 'containers'.
 1. Create a container within the storage via the Azure portal
 2. Configure the function in `__init__.py`
 
@@ -48,7 +48,7 @@ data = pickle.loads(blob_client.download_blob().readall())
 3. [OPTIONAL] If you are using a different storage, [copy the credentials from the Azure portal](https://docs.microsoft.com/en-us/azure/storage/blobs/storage-quickstart-blobs-python#copy-your-credentials-from-the-azure-portal) and [add it in the function settings](https://docs.microsoft.com/en-us/azure/azure-functions/functions-how-to-use-azure-function-app-settings#settings) (so that they will be callable within the function as environmental variables)
 
 ## Credentials, keys and secrets
-If your function needs to use an API (e.g. Google Maps) and requires credentials, **do NOT store them in `__init__.py`**, since this will expose them to whoever has access to the resource group. The recommended workflow is to store them in an Azure key vault.
+If your function needs to use an API (e.g. Google Maps) and requires credentials, **do NOT store them in `__init__.py`**, since this will expose them to whoever has access to the resource group. The recommended workflow is to store them in an [Azure Key Vault](https://docs.microsoft.com/en-us/azure/key-vault/general/overview).
 1. Create an Azure Key Vault in the same resource group
 2. Ask to be given the role of "Key Vault Secrets Officer" in the vault (ask the admin of the resource group)
 3. Add your credentials in the vault under `Secrets`, via the Azure portal

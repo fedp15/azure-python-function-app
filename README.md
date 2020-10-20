@@ -27,7 +27,9 @@ $ func start --functions <my-function> --python --verbose --build remote
 You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: you can also check the logs in the Function App under `Functions > <my-function> > Code + Test > Logs`
 
 ## Data
-If your function needs to use data, this data needs to be in an Azure storage. When you create a new function with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Good to know: individual files in Azure storage are called 'blobs' and directories 'containers'.
+If your function takes data as input/output, the recommended workflow is to store the data in an Azure storage and download/upload it from/to there.
+
+When you create a new function with Visual Data Studio a new storage account will be created automatically in the same resource group; you can use this one or an existing one. Good to know: individual files in Azure storage are called 'blobs' and directories 'containers'.
 1. Create a container within the storage via the Azure portal
 2. Upload your data in the container
 They way your function exchange data with the storage is via [azure-storage-blob](https://pypi.org/project/azure-storage-blob/), which needs the rights credentials. If you are using the default storage that is created with the function, the credentials are already stored in an environmental variable named `AzureWebJobsStorage`; you can get it with

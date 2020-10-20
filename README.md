@@ -1,10 +1,11 @@
 # azure-python-function-app
-template to build a python-based Azure function app
+template and documentation to build an Azure function app in python
 
 ## Requirements
 Locally:
 1. Python 3.*
 2. [Azure Functions Core Tools and Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01#configure-your-environment)
+
 In Azure:
 1. A resource group for linux resources (BEST PRACTISE: make a new resource group for each project)
 2. The role of "Contributor" in that resource group (ask Maarten)

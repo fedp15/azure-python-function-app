@@ -24,7 +24,7 @@ $ func start --functions <my-function> --python --verbose --build remote
 ```
 6. [Deploy to Azure using Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-05)
 
-You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: you can also check the logs in the Function App under `Functions > <my-function> > Code + Test > Logs`
+You will now be able to monitor your function in the [Azure portal](https://portal.azure.com/). A new resource of type "Application Insights" will be created, where you can monitor runs, errors, etc. Good to know: in Azure portal you can also check the logs within the Function App (`Functions > <my-function> > Code + Test > Logs`)
 
 ## Data
 If your function takes data as input/output, the recommended workflow is to store the data in an Azure storage and download/upload it from/to there.

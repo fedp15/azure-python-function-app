@@ -33,7 +33,7 @@ When you create a new function with Visual Data Studio a new storage account wil
 1. Create a container within the storage via the Azure portal
 2. Configure the function in `__init__.py`
 
-They way your function exchange data with the storage is via [azure-storage-blob](https://pypi.org/project/azure-storage-blob/), which needs the rights credentials. If you are using the default storage that is created with the function, the credentials are already stored in an environmental variable named `AzureWebJobsStorage`; you can get it with
+They way your function exchange data with the storage is via [azure-storage-blob](https://pypi.org/project/azure-storage-blob/), which needs the rights credentials. If you are using the default storage that is created with the function, the credentials are already accessible as an environmental variable named `AzureWebJobsStorage`; you can get it with
 ```
 credentials = os.environ['AzureWebJobsStorage']
 ```

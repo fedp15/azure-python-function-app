@@ -9,13 +9,13 @@ Locally:
 2. [Azure Functions Core Tools and Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-01#configure-your-environment)
 
 In Azure:
-1. An [Azure Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) for linux resources (BEST PRACTISE: make a new resource group for each project)
+1. An [Azure Resource Group](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/overview) for linux resources (BEST PRACTICE: make a new resource group for each project)
 2. The role of "Contributor" in that resource group (ask Maarten)
 
 ## Steps
 1. [create an empty python function app with Visual Data Studio](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-02)
 2. Copy-paste your script into `__init__.py`, see [this template](https://github.com/jmargutt/azure-python-function-app/blob/main/my-function/__init__.py)
-3. Copy-paste the modules required to run your python script into `requirements.txt`. RECOMMENDED: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
+3. Copy-paste the modules required to run your python script into `requirements.txt`. BEST PRACTICE: add only what is needed. If in doubt, start a new virtual env for your project, install only what is needed and then get requirements with
 ```sh 
 $ pip freeze > requirements.txt
 ```

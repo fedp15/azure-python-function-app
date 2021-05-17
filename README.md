@@ -24,6 +24,10 @@ $ pip freeze > requirements.txt
 ```sh 
 $ func start --functions <my-function> --python --verbose --build remote
 ```
+[OPTIONAL] if you need to fetch the function settings from an existing function app, execute
+```sh 
+$ func azure functionapp fetch-app-settings <my-function-app>
+```
 6. [Deploy to Azure using Visual Studio Code](https://docs.microsoft.com/en-us/azure/developer/python/tutorial-vs-code-serverless-python-05)
 7. Store your code on [rodekruis' github](https://github.com/rodekruis): create a new repo named `<my-function-app>-function-app` and put your code there
 

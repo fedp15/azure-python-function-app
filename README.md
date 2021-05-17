@@ -60,4 +60,4 @@ If your function needs to use an API (e.g. Google Maps) and requires credentials
 1. Create an Azure Key Vault in the same resource group
 2. Ask to be given the role of "Key Vault Secrets Officer" in the vault (ask the admin of the resource group)
 3. Add your credentials in the vault under `Secrets`, via the Azure portal
-4. [Integrate the credentials in your function app](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/)
+4. [Integrate the credentials in your function app](https://daniel-krzyczkowski.github.io/Integrate-Key-Vault-Secrets-With-Azure-Functions/) <-- N.B. remove curly braces when adding the “Secret Identifier” to the “Configuration” of the Function App, see [this issue](https://docs.microsoft.com/en-us/answers/questions/55403/could-not-access-key-vault-reference-metadata.html)
